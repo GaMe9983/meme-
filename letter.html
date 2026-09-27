@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>friendship day · two years</title>
+
+<link rel="icon" type="image/png" href="media/38.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   FONT
+========================= */
+
+@font-face {
+    font-family: "ae-Nice";
+    src: url("media/ae-Nice.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --purple: #6f4b78;
+    --purple2: #9b78a4;
+    --cream: #fbf5fb;
+    --ink: #49384d;
+    --muted: #8b778e;
+    --line: rgba(111,75,120,.18);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fbf8fc;
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   GRAIN
+========================= */
+
+body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    opacity: .018;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+    position: fixed;
+    top: 22px;
+    left: 24px;
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #6f4b78;
+    text-decoration: none;
+
+    background: rgba(255,255,255,.78);
+    border: 1px solid rgba(111,75,120,.14);
+
+    padding: 9px 14px;
+    border-radius: 999px;
+
+    box-shadow: 0 8px 25px rgba(111,75,120,.08);
+
+    backdrop-filter: blur(14px);
+
+    transition: .25s ease;
+}
+
+.back-button span {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.back-button b {
+    font: 500 12px "DM Sans", sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(111,75,120,.13);
+}
+
+
+/* =========================
+   DECORATION
+========================= */
+
+.decor {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    opacity: .45;
+}
+
+.decor-one {
+    width: 95px;
+    height: 95px;
+    right: 7%;
+    top: 28%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            #ead0e8 0 8%,
+            transparent 9%
+        ),
+        radial-gradient(
+            circle,
+            #f2d8e5 0 35%,
+            transparent 37%
+        );
+
+    filter: blur(.2px);
+}
+
+.decor-two {
+    width: 120px;
+    height: 120px;
+    left: 3%;
+    top: 62%;
+
+    border: 1px solid rgba(155,120,164,.25);
+
+    box-shadow:
+        inset 0 0 0 12px rgba(155,120,164,.05);
+}
+
+.decor-three {
+    width: 75px;
+    height: 75px;
+    right: 4%;
+    bottom: 12%;
+
+    background:
+        radial-gradient(
+            circle,
+            #d9bfdc 0 5%,
+            transparent 6%
+        ),
+        radial-gradient(
+            circle,
+            #f0d3e2 0 28%,
+            transparent 30%
+        );
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-head {
+    min-height: 30vh;
+
+    display: grid;
+    place-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff 0%,
+            #fbf5fc 55%,
+            #f8eefb 100%
+        );
+
+    color: var(--purple);
+
+    padding: 65px 25px 40px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.page-head:before,
+.page-head:after {
+    content: "";
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-head:before {
+    width: 360px;
+    height: 360px;
+
+    left: -170px;
+    top: -170px;
+
+    background:
+        radial-gradient(
+            circle,
+            #d8b9df 0%,
+            rgba(216,185,223,.45) 38%,
+            transparent 70%
+        );
+}
+
+.page-head:after {
+    width: 300px;
+    height: 300px;
+
+    right: -120px;
+    bottom: -160px;
+
+    background:
+        radial-gradient(
+            circle,
+            #efc9dc 0%,
+            rgba(239,201,220,.4) 38%,
+            transparent 72%
+        );
+}
+
+.page-head > div {
+    position: relative;
+    z-index: 1;
+}
+
+.page-head .eyebrow {
+    font-size: 10px;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--purple2);
+    margin-bottom: 22px;
+}
+
+.page-head h1 {
+    font:
+        500
+        clamp(55px,9vw,120px)
+        /.82
+        "Playfair Display",
+        serif;
+
+    letter-spacing: -.06em;
+}
+
+.page-head h1 em {
+    font:
+        600
+        .62em
+        "Dancing Script",
+        cursive;
+
+    color: var(--purple2);
+}
+
+.page-head p {
+    margin-top: 25px;
+
+    font:
+        500
+        clamp(22px,3vw,34px)
+        "Dancing Script",
+        cursive;
+
+    color: #9b879f;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-bar {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+
+    padding: 12px 5vw;
+
+    background: rgba(255,255,255,.94);
+
+    backdrop-filter: blur(16px);
+
+    border-bottom:
+        1px solid rgba(111,75,120,.13);
+}
+
+.music {
+    max-width: 650px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    color: var(--ink);
+}
+
+.album {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #cdb8d2;
+}
+
+.song {
+    flex: 1;
+}
+
+.song strong {
+    display: block;
+
+    font-size: 12px;
+
+    color: var(--purple);
+}
+
+.song span {
+    font-size: 10px;
+    color: #9a879e;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.play {
+    width: 38px;
+    height: 38px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: var(--purple);
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.play:hover {
+    transform: scale(1.08);
+}
+
+.play:active {
+    transform: scale(.94);
+}
+
+.play:focus {
+    outline: none;
+}
+
+.play:focus-visible {
+    outline: 2px solid var(--purple2);
+    outline-offset: 3px;
+}
+
+.play svg {
+    width: 18px;
+    height: 18px;
+
+    display: block;
+
+    fill: currentColor;
+
+    pointer-events: none;
+}
+
+#pauseIcon {
+    display: none;
+}
+
+
+/* =========================
+   MESSAGE STAGE
+========================= */
+
+.message-stage {
+    position: relative;
+
+    padding: 70px 0 110px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbf8fc 0%,
+            #fff 38%,
+            #faf5fb 100%
+        );
+
+    overflow: hidden;
+}
+
+.message-stage:before,
+.message-stage:after {
+    content: "";
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    filter: blur(65px);
+
+    opacity: .34;
+
+    pointer-events: none;
+}
+
+.message-stage:before {
+    left: -280px;
+    top: 260px;
+
+    background:
+        radial-gradient(
+            circle,
+            #d9b9df 0%,
+            #ead9ed 38%,
+            transparent 70%
+        );
+}
+
+.message-stage:after {
+    right: -280px;
+    top: 900px;
+
+    background:
+        radial-gradient(
+            circle,
+            #f0c7d9 0%,
+            #f6dce8 38%,
+            transparent 70%
+        );
+}
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.message-layout {
+    width: min(1500px,96%);
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(210px,1fr)
+        minmax(560px,760px)
+        minmax(210px,1fr);
+
+    gap: clamp(25px,4vw,70px);
+
+    align-items: start;
+
+    position: relative;
+    z-index: 2;
+}
+
+.message-column {
+    min-width: 0;
+}
+
+
+/* =========================
+   PAPER
+========================= */
+
+.message-paper {
+    background: rgba(255,255,255,.94);
+
+    padding:
+        clamp(30px,5vw,70px)
+        clamp(25px,6vw,75px);
+
+    position: relative;
+
+    box-shadow:
+        0 20px 65px rgba(73,56,77,.08);
+
+    border:
+        1px solid rgba(111,75,120,.10);
+}
+
+.message-paper:before {
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border:
+        1px solid rgba(111,75,120,.12);
+
+    pointer-events: none;
+}
+
+.message-paper .label {
+    text-align: center;
+
+    color: var(--purple);
+
+    font-size: 22px;
+
+    letter-spacing: .30em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.message-paper h2 {
+    text-align: center;
+
+    font:
+        500
+        clamp(45px,6vw,78px)
+        /.9
+        "Playfair Display",
+        serif;
+
+    color: var(--purple);
+
+    letter-spacing: -.055em;
+}
+
+.message-paper h2 em {
+    display: block;
+
+    font:
+        600
+        .7em
+        "Dancing Script",
+        cursive;
+
+    color: var(--purple2);
+}
+
+.message-paper .intro {
+    text-align: center;
+
+    font:
+        500
+        clamp(22px,2.7vw,30px)
+        "Dancing Script",
+        cursive;
+
+    color: var(--muted);
+
+    margin:
+        25px
+        auto
+        48px;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    font-family: "ae-Nice", sans-serif !important;
+
+    font-size:
+        clamp(21px,2vw,27px);
+
+    line-height: 2.05;
+
+    color: var(--ink);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    direction: rtl;
+
+    unicode-bidi: plaintext;
+
+    word-spacing: 2px;
+}
+
+.letter p {
+    margin: 0;
+
+    font-family: "ae-Nice", sans-serif !important;
+
+    font-size: inherit;
+
+    line-height: inherit;
+
+    color: inherit;
+
+    text-align: center;
+}
+
+.letter .big-drop {
+    font:
+        700
+        4.7em/.65
+        "Playfair Display",
+        serif;
+
+    color: var(--purple);
+
+    float: left;
+
+    margin:
+        .16em
+        .10em
+        0
+        0;
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature {
+    text-align: center;
+
+    margin-top: 45px;
+
+    color: var(--purple);
+
+    font:
+        700
+        clamp(28px,4vw,44px)
+        "Dancing Script",
+        cursive;
+}
+
+
+/* =========================
+   SIDE PHOTOS
+========================= */
+
+.side-photos {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 95px;
+
+    padding-top: 95px;
+}
+
+.side-photos.right {
+    padding-top: 220px;
+}
+
+.photo-item {
+    position: relative;
+
+    width: min(270px,100%);
+
+    margin: 0 auto;
+
+    min-height: 250px;
+}
+
+.photo-big {
+    width: 82%;
+
+    margin: auto;
+
+    background: #fff;
+
+    padding: 9px;
+
+    box-shadow:
+        0 20px 45px rgba(73,56,77,.17);
+
+    transform: rotate(-2.2deg);
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.photo-big img {
+    width: 100%;
+    height: 235px;
+
+    object-fit: cover;
+}
+
+.photo-small {
+    position: absolute;
+
+    width: 43%;
+
+    aspect-ratio: 1/1;
+
+    object-fit: cover;
+
+    background: #fff;
+
+    padding: 7px;
+
+    box-shadow:
+        0 15px 35px rgba(73,56,77,.22);
+
+    z-index: 3;
+
+    right: 0;
+    bottom: -20px;
+
+    transform: rotate(7deg);
+}
+
+.side-photos.right .photo-big {
+    transform: rotate(2.2deg);
+}
+
+.side-photos.right .photo-small {
+    left: 0;
+    right: auto;
+
+    transform: rotate(-7deg);
+}
+
+.photo-number {
+    position: absolute;
+
+    top: -25px;
+    left: 4px;
+
+    color: #b49ab9;
+
+    font:
+        600
+        12px
+        "Playfair Display",
+        serif;
+
+    letter-spacing: .12em;
+}
+
+.side-photos.right .photo-number {
+    left: auto;
+    right: 4px;
+}
+
+
+/* =========================
+   END
+========================= */
+
+.end {
+    padding:
+        20px
+        20px
+        100px;
+
+    text-align: center;
+
+    color: var(--purple);
+
+    background:
+        linear-gradient(
+            180deg,
+            #faf5fb,
+            #fff
+        );
+}
+
+.end .line {
+    width: 90px;
+    height: 1px;
+
+    background: #c9a9cf;
+
+    margin:
+        0
+        auto
+        28px;
+}
+
+.end p {
+    font:
+        500
+        30px
+        "Dancing Script",
+        cursive;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1050px) {
+
+    .message-layout {
+        grid-template-columns:
+            180px
+            minmax(500px,1fr)
+            180px;
+
+        gap: 20px;
+    }
+
+    .photo-item {
+        width: 170px;
+    }
+
+    .photo-big img {
+        height: 170px;
+    }
+
+    .side-photos {
+        gap: 75px;
+    }
+
+    .side-photos.right {
+        padding-top: 180px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:820px) {
+
+    .message-layout {
+        display: block;
+
+        width: min(760px,94%);
+    }
+
+    .message-paper {
+        margin: auto;
+    }
+
+    .side-photos,
+    .side-photos.right {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:
+            45px
+            20px;
+
+        padding:
+            55px
+            0
+            0;
+
+        margin: auto;
+    }
+
+    .photo-item {
+        width: min(230px,100%);
+
+        min-height: 215px;
+    }
+
+    .photo-big img {
+        height: 195px;
+    }
+
+    .photo-small {
+        width: 40%;
+    }
+
+    .side-photos.right {
+        padding-top: 45px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:520px) {
+
+    .back-button {
+        top: 14px;
+        left: 14px;
+
+        padding:
+            8px
+            11px;
+    }
+
+    .back-button b {
+        display: none;
+    }
+
+    .page-head {
+        min-height: 25vh;
+
+        padding:
+            65px
+            20px
+            35px;
+    }
+
+    .message-stage {
+        padding-top: 35px;
+    }
+
+    .message-paper {
+        padding:
+            38px
+            23px
+            50px;
+    }
+
+    .message-paper:before {
+        inset: 9px;
+    }
+
+    .letter {
+        font-size: 20px;
+
+        line-height: 1.9;
+
+        padding:
+            0
+            5px;
+    }
+
+    .letter p {
+        font-size: inherit;
+
+        line-height: inherit;
+    }
+
+    .side-photos,
+    .side-photos.right {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap:
+            35px
+            12px;
+    }
+
+    .photo-item {
+        min-height: 180px;
+    }
+
+    .photo-big {
+        width: 84%;
+        padding: 7px;
+    }
+
+    .photo-big img {
+        height: 160px;
+    }
+
+    .photo-small {
+        padding: 5px;
+
+        width: 42%;
+
+        bottom: -12px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     BACK
+========================= -->
+
+<a
+    class="back-button"
+    href="javascript:history.back()"
+    aria-label="Back to previous page"
+>
+    <span>←</span>
+    <b>back</b>
+</a>
+
+
+<!-- =========================
+     DECOR
+========================= -->
+
+<div class="decor decor-one"></div>
+<div class="decor decor-two"></div>
+<div class="decor decor-three"></div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="page-head">
+
+    <div>
+
+        <div class="eyebrow">
+            friendship day · two years
+        </div>
+
+        <h1>
+            2 years
+            <em>with you</em>
+        </h1>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<div class="music-bar">
+
+    <div class="music">
+
+        <img
+            src="media/38.jpg"
+            class="album"
+            alt="album"
+        >
+
+        <div class="song">
+
+            <strong>
+                TUL8TE — WALA ASH WALA KAN
+            </strong>
+
+            <span>
+                press to play
+            </span>
+
+        </div>
+
+        <button
+            class="play"
+            id="playButton"
+            type="button"
+            aria-label="تشغيل الأغنية"
+            aria-pressed="false"
+        >
+
+            <!-- PLAY SVG -->
+            <svg
+                id="playIcon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M8 5.2v13.6c0 .7.8 1.1 1.4.7l10.2-6.8c.5-.3.5-1.1 0-1.4L9.4 4.5c-.6-.4-1.4 0-1.4.7z"/>
+            </svg>
+
+            <!-- PAUSE SVG -->
+            <svg
+                id="pauseIcon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M6.5 5h3.2v14H6.5V5zm7.8 0h3.2v14h-3.2V5z"/>
+            </svg>
+
+        </button>
+
+        <audio
+            id="audio"
+            src="media/ولا عاش ولا كان.mp3"
+            preload="auto"
+        ></audio>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MESSAGE
+========================= -->
+
+<main class="message-stage">
+
+    <div class="message-layout">
+
+
+        <!-- LEFT PHOTOS -->
+
+        <aside
+            class="side-photos left"
+            id="leftPhotos"
+        ></aside>
+
+
+        <!-- MAIN LETTER -->
+
+        <section class="message-column">
+
+            <article class="message-paper reveal">
+
+                <div class="label">
+                    from
+                </div>
+
+
+                <h2>
+                    pretty girl
+                    <em>love you</em>
+                </h2>
+
+
+                <div class="intro">
+                    I didn't want this to be just another page.
+                </div>
+
+
+                <div class="letter">
+
+                    <p>
+
+مبدايا مابعرف كيف رح يكون شعورك بس تقرأي  بس رح احاول اني احط مشاعري كلها فالرسالة عشان بس تقرأي يعني يوصلك لو نص المشاعر, فاول اشي بدي احكيلك اياه انو انتي شخص كثير قوي وكثير بتتحملي اشياء وفخورة فيك كثير على كل اشي عم تعمليه ورح تعمليه وفخورة انك صاحبيتي وانك محافظة على دينك وبتحاولي دايما تعملي افضل اشي بتقدريه لو ماحد مقدر او شايف شو عم تعملي انا عارفة قديش بتتعبي ومقدرة انك بتحاولي تحققي احلامك وبتضلك تسعي لحتى توصليها لو ما زبط من اول مرة بتضلك تجربي, وحتى انك شخص مشرق زي الشمس, فخورة انك ضليتك قوية حتى لما كنتي بدك تستسلمي وحققتي يلي بدك اياه فخورة فيك انك ضليتك عطبيعتك وماسك حالك حتى في اصعب الاوقات يلي كل اشي حوليك انهار, فخورة فيك اكثر من ما تتوقعي. ممكن تزهقي من كثرة الكلام او تحسي كرنج بس يعني اتحملي شو اعملك كتابة اكثر من شهرين رح تقرأيها هون ههههه, والصراحة يعني مش بيوم واحد كتبت الرسالة قعدت حرفيا اكثر من يوم وحتى اني عملت كل اشي بخلال شهر وممكن اكثر يعني ااحنا هسا بشهر 6 بالعطلة وصارلي كثير مش شايفيتك اكثر من 12 يوم اشتقتلك, وعشان اجمع مشاعري واحطهم بمكان واحد كنت محتاجة اكثر من شهر فاحتمال انو تقرايها بشهر 11 بس انو المهم توصلك مشاعري واني جد حد بحبك كثير وممتن الك حتى لو مافضفضتلك دايما او ماحكيت كثير بس جد حتى وانا ماكنت احكي كنتي تفهميني, يعني اغلب الوقت كنتي تحسي فيني وهاد بكفي لشخص بحب حد يفهمه بدون مايحكي, كثير استمتعت بس اجيت عندك وجد كنت محتاجة يجي يوم هيك افرغ فيه مشاعري وطاقتي, والهدية بوقتها جد اجت عالوجع يعني بالعافية قدرت امسك حالي, بحب اشاركك كل اشي بصير معي حتى اتفه الاشياء بحب اسمعك مش بس عشان ارد عليكي او اعطيكي حل بس عشان أفهمك واكون دايما جنبك, وحتى بس تحكي حتى لو حاكيته الي مرة ومرتين بستمتع لانو بس تحكي بتعطي جو كاني اول مرة بسمعها وكثير فيك طاقة بالحكي حتى لو بتفضفي مش بتحكي اشي بضحك بتكون فيك طاقة مش طبيعية بتعرفي توصلي المعلومات بطريقة يعني اييش, حتى انك شخص كثير بهتم بحاله من كل النواحي اللهم بارك شو انك بنوتة انثوية كيوتت جد بحبك ياخي, شكرا لانك موجودة معي مو دايما اقرب بالمكان بس اقرب بالقلب لانك كنتي تشوفي التفاصيل الصغيرة وتقدريها وتساعديني اكون نسخة افضل, وجودك بحياتي نعمة كبير الحمد لله عندي اياكي ماريتي, بس ارجع واشوف الذكريات بحس انو جد صارلنا وقت مع بعض يعني صرتي اكثر من صديقة صرتي اخت واقرب يعني عشنا حرفيا كل اشي مع بعض حكينا وضحكنا عيطنا خفنا وكل المشاعر صارت مع بعض عشنا كثير اوقات كنا بحاجة بعض وكنا موجودين, جربنا اشياء ما عمري تخيلت اجربها وجربتي اشياء برضوا جديدة, والصراحة الشخص يلي بعرفك منيح وفاهمك رح يعرف باي وقت انك متدايقة او مبسوطة من ملامح وجهك او من نبرة صوتك فيعني تفكريش انك تخبي علي انك زعلاانة او متدايقة, ممكن يوم من الايام ما اكون بالحياة وانسى اشكرك عشان كنتي واقفة معي بلحظة كانت صعبة علي كثير, وكمان بس اعطيتيني عيدية الصراحة ما كنت متوقع وانو كمان ماحد فكر انه يعطيني عيدية حتى لو كانت بسيطة بس لانو حد تزكرني وقذا شعور كثير حلو وحتى بس تحكيلي طمنيني بس توصلي بحس بشعور حلو, والصراحة بثق بذوقك حرفيا بكل اشي اواعي يعني حلو ذوقك فيه واكل بثق اكثر لانو بسس تحكي اشي عنه زاكي بصير زاكي بعرفش كيففف وانت عارفة عن شو قصدي, بقدرلك كل اشي بتعملي وبتمنى انو تضلك مبسوطة بحياتك وتحققي كل امنياتك, كامساميدا جد كثيررررر شكرا, انت بتستاهلي الافضل لا تنسي هاد الاشي, ولا تنسي تحكيلي دايما شو صار بيومك بحب اسمعك, اتوقع هاي تكون اخر سالة لانو خلص الحكي بس انو بحس لانها رح تضل لوقت اكثر من الدفتر فحبيت اكتب فيها اكثر, ياريت اشوف ردة فعلك بعد او وانتي بتقرأي الرسالة رح اكون مبسوطة ومتحمسة لردة فعلكككك
+
+                    </p>
+
+                </div>
+
+
+                <div class="signature">
+                    Happy two years
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- RIGHT PHOTOS -->
+
+        <aside
+            class="side-photos right"
+            id="rightPhotos"
+        ></aside>
+
+    </div>
+
+
+    <!-- END -->
+
+    <div class="end reveal">
+
+        <div class="line"></div>
+
+        <p>
+            and there is still so much more to remember
+        </p>
+
+    </div>
+
+</main>
+
+
+<script>
+
+/* =========================
+   AUTH
+========================= */
+
+if (
+    sessionStorage.getItem("authenticated") !== "true"
+) {
+    window.location.href = "lock.html";
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(el => observer.observe(el));
+
+
+/* =========================
+   MUSIC
+========================= */
+
+const audio =
+    document.getElementById("audio");
+
+const playButton =
+    document.getElementById("playButton");
+
+const playIcon =
+    document.getElementById("playIcon");
+
+const pauseIcon =
+    document.getElementById("pauseIcon");
+
+
+function updateMusicButton() {
+
+    const isPlaying =
+        !audio.paused &&
+        !audio.ended;
+
+    playIcon.style.display =
+        isPlaying ? "none" : "block";
+
+    pauseIcon.style.display =
+        isPlaying ? "block" : "none";
+
+    playButton.setAttribute(
+        "aria-label",
+        isPlaying
+            ? "إيقاف الأغنية"
+            : "تشغيل الأغنية"
+    );
+
+    playButton.setAttribute(
+        "aria-pressed",
+        String(isPlaying)
+    );
+}
+
+
+playButton.addEventListener(
+    "click",
+    async function(event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (
+            audio.paused ||
+            audio.ended
+        ) {
+
+            try {
+
+                await audio.play();
+
+            } catch (error) {
+
+                console.log(
+                    "Audio could not play:",
+                    error
+                );
+
+            }
+
+        } else {
+
+            audio.pause();
+
+        }
+
+        updateMusicButton();
+
+    }
+);
+
+
+audio.addEventListener(
+    "play",
+    updateMusicButton
+);
+
+audio.addEventListener(
+    "playing",
+    updateMusicButton
+);
+
+audio.addEventListener(
+    "pause",
+    updateMusicButton
+);
+
+audio.addEventListener(
+    "ended",
+    updateMusicButton
+);
+
+
+updateMusicButton();
+
+
+/* =========================
+   27 PHOTOS
+========================= */
+
+const photos = [
+
+    ["13.jpg","5.jpg"],
+    ["12.png","19.jpg"],
+    ["27.jpg","9.png"],
+
+    ["14.jpg","10.png"],
+    ["18.jpg","24.jpg"],
+    ["15.jpg","29.jpg"],
+
+    ["11.png","32.jpg"],
+    ["23.png","36.jpg"],
+    ["8.jpg","17.jpg"],
+
+    ["21.jpg","33.jpg"],
+    ["34.jpg","35.jpg"],
+    ["16.jpg","80.jpg"],
+
+    ["30.jpg","31.jpg"],
+    ["26.jpg","3.png"]
+
+];
+
+
+const left =
+    document.getElementById("leftPhotos");
+
+const right =
+    document.getElementById("rightPhotos");
+
+
+photos.forEach(
+    (pair, i) => {
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "photo-item reveal";
+
+
+        item.innerHTML = `
+
+            <div class="photo-number">
+                ${String(i + 1).padStart(2,"0")}
+            </div>
+
+            <div class="photo-big">
+
+                <img
+                    src="media/letter/${pair[0]}"
+                    alt="Memory ${i + 1}"
+                >
+
+            </div>
+
+            <img
+                class="photo-small"
+                src="media/letter/${pair[1]}"
+                alt="Memory detail ${i + 1}"
+            >
+
+        `;
+
+
+        if (i % 2 === 0) {
+
+            left.appendChild(item);
+
+        } else {
+
+            right.appendChild(item);
+
+        }
+
+
+        observer.observe(item);
+
+    }
+);
+
+
+/* =========================
+   PAGE SHOW
+========================= */
+
+window.addEventListener(
+    "pageshow",
+    () => {
+
+        if (
+            sessionStorage.getItem("authenticated")
+            !== "true"
+        ) {
+
+            window.location.href =
+                "lock.html";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
