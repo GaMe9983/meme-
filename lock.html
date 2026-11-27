@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+<title>FOR MARITY </title>
+
+  <link rel="icon" type="image/png" href="media/38.jpg">
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap');
+
+
+        /* =====================================================
+           COLORS
+        ===================================================== */
+
+        :root{
+
+            --cream: #fff4ed;
+            --cream-light: #fffaf7;
+
+            --pink: #d95f7b;
+            --pink-dark: #b94c68;
+            --pink-soft: #f39ab0;
+
+            --peach: #f7b58f;
+            --peach-light: #ffd5bd;
+
+            --text: #6d4650;
+            --muted: #927c7b;
+
+            --line: rgba(145, 92, 99, .30);
+
+            --shadow: rgba(160, 78, 98, .16);
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        *{
+
+            box-sizing:border-box;
+
+            margin:0;
+
+            padding:0;
+
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body{
+
+            min-height:100vh;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 5%,
+                    rgba(255,255,255,.95),
+                    transparent 22%
+                ),
+
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(255,183,161,.50),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 15% 90%,
+                    rgba(247,151,179,.30),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 85%,
+                    rgba(255,213,189,.55),
+                    transparent 32%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #ffd1c7,
+                    #fff0e8 45%,
+                    #ffc4ba
+                );
+
+            color:var(--text);
+
+            font-family:"DM Sans",sans-serif;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            overflow:hidden;
+
+            position:relative;
+
+        }
+
+
+        /* =====================================================
+           SOFT BACKGROUND LIGHT
+        ===================================================== */
+
+        body::after{
+
+            content:"";
+
+            position:fixed;
+
+            inset:-20%;
+
+            pointer-events:none;
+
+            background:
+
+                radial-gradient(
+                    ellipse at center,
+                    rgba(255,255,255,.30),
+                    transparent 60%
+                );
+
+            z-index:0;
+
+        }
+
+
+        /* =====================================================
+           PAPER / FILM TEXTURE
+        ===================================================== */
+
+        body::before{
+
+            content:"";
+
+            position:fixed;
+
+            inset:0;
+
+            pointer-events:none;
+
+            opacity:.10;
+
+            z-index:50;
+
+            background-image:url(
+                "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E"
+            );
+
+        }
+
+
+        /* =====================================================
+           SMALL DECORATIVE LIGHTS
+        ===================================================== */
+
+        .light{
+
+            position:fixed;
+
+            width:8px;
+
+            height:8px;
+
+            border-radius:50%;
+
+            background:rgba(255,255,255,.85);
+
+            box-shadow:
+
+                0 0 12px rgba(255,255,255,.8),
+
+                0 0 25px rgba(255,183,161,.5);
+
+            pointer-events:none;
+
+            z-index:1;
+
+            animation:floatLight 6s ease-in-out infinite;
+
+        }
+
+
+        .light.one{
+
+            top:16%;
+
+            left:8%;
+
+            animation-delay:0s;
+
+        }
+
+
+        .light.two{
+
+            top:28%;
+
+            right:12%;
+
+            width:5px;
+
+            height:5px;
+
+            animation-delay:1.5s;
+
+        }
+
+
+        .light.three{
+
+            bottom:18%;
+
+            left:17%;
+
+            width:6px;
+
+            height:6px;
+
+            animation-delay:3s;
+
+        }
+
+
+        .light.four{
+
+            bottom:12%;
+
+            right:9%;
+
+            width:4px;
+
+            height:4px;
+
+            animation-delay:4s;
+
+        }
+
+
+        @keyframes floatLight{
+
+            0%,
+            100%{
+
+                transform:translateY(0);
+
+                opacity:.45;
+
+            }
+
+            50%{
+
+                transform:translateY(-15px);
+
+                opacity:1;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           PASSWORD SCREEN
+        ===================================================== */
+
+        .lock-screen{
+
+            width:min(430px,90vw);
+
+            text-align:center;
+
+            position:relative;
+
+            z-index:5;
+
+            transition:
+
+                opacity .7s ease,
+
+                transform .7s ease;
+
+        }
+
+
+        .lock-screen.hide{
+
+            opacity:0;
+
+            transform:translateY(-25px);
+
+            pointer-events:none;
+
+        }
+
+
+        /* =====================================================
+           TOP LABEL
+        ===================================================== */
+
+        .tiny{
+
+            font-size:15px;
+
+            letter-spacing:4px;
+
+            color:var(--muted);
+
+            text-transform:uppercase;
+
+            margin-bottom:25px;
+
+        }
+
+
+        /* =====================================================
+           TITLE
+        ===================================================== */
+
+        h1{
+
+            font-family:"Caveat",cursive;
+
+            font-size:58px;
+
+            font-weight:500;
+
+            line-height:1;
+
+            color:var(--pink-dark);
+
+            text-shadow:
+
+                0 4px 15px rgba(185,76,104,.10);
+
+        }
+
+
+        /* =====================================================
+           SUBTITLE
+        ===================================================== */
+
+        .subtitle{
+
+            margin-top:14px;
+
+            font-size:1px;
+
+            color:var(--muted);
+
+            line-height:1.7;
+
+        }
+
+
+        /* =====================================================
+           PASSWORD
+        ===================================================== */
+
+        .password-box{
+
+            margin-top:45px;
+
+            display:flex;
+
+            flex-direction:column;
+
+            align-items:center;
+            
+        }
+
+
+        .password-input{
+
+            width:100%;
+
+            max-width:330px;
+
+            border:none;
+
+            border-bottom:
+
+                1px solid var(--line);
+
+            background:
+
+                rgba(255,255,255,.20);
+
+            outline:none;
+
+            padding:13px 8px;
+
+            text-align:center;
+
+            font-family:"DM Sans",sans-serif;
+
+            font-size:14px;
+
+            color:var(--text);
+
+            transition:
+
+                border-color .3s ease,
+
+                background .3s ease,
+
+                box-shadow .3s ease;
+
+        }
+
+
+        .password-input:focus{
+
+            border-color:var(--pink);
+
+            background:
+
+                rgba(255,255,255,.38);
+
+            box-shadow:
+
+                0 8px 25px rgba(185,76,104,.08);
+
+        }
+
+
+        .password-input::placeholder{
+
+            color:#b29b98;
+
+        }
+
+
+        /* =====================================================
+           ENTER BUTTON
+        ===================================================== */
+
+        .enter-button{
+
+            margin-top:25px;
+
+            border:none;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    var(--pink),
+                    var(--pink-soft)
+                );
+
+            color:#fffaf8;
+
+            padding:13px 36px;
+
+            font-family:"DM Sans",sans-serif;
+
+            font-size:10px;
+
+            letter-spacing:3px;
+
+            text-transform:uppercase;
+
+            cursor:pointer;
+
+            box-shadow:
+
+                5px 6px 0
+                rgba(185,76,104,.12),
+
+                0 10px 25px
+                rgba(185,76,104,.12);
+
+            transition:
+
+                transform .3s ease,
+
+                box-shadow .3s ease;
+
+        }
+
+
+        .enter-button:hover{
+
+            transform:
+
+                translateY(-3px);
+
+            box-shadow:
+
+                5px 9px 0
+                rgba(185,76,104,.15),
+
+                0 15px 30px
+                rgba(185,76,104,.16);
+
+        }
+
+
+        .enter-button:active{
+
+            transform:
+
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+           ERROR
+        ===================================================== */
+
+        .error{
+
+            height:20px;
+
+            margin-top:18px;
+
+            font-family:"Caveat",cursive;
+
+            font-size:19px;
+
+            color:#a35d68;
+
+            opacity:0;
+
+            transition:
+
+                opacity .3s ease;
+
+        }
+
+
+        .error.show{
+
+            opacity:1;
+
+        }
+
+
+        /* =====================================================
+           DREAMY HEART LOADING SCREEN
+        ===================================================== */
+
+        .loading-screen{
+
+            position:fixed;
+
+            inset:0;
+
+            background:
+
+                radial-gradient(
+                    circle at 18% 18%,
+                    rgba(255,255,255,.70),
+                    transparent 24%
+                ),
+
+                radial-gradient(
+                    circle at 82% 20%,
+                    rgba(255,196,176,.65),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 18% 82%,
+                    rgba(246,159,190,.45),
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at 82% 82%,
+                    rgba(255,220,190,.70),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #f8b9c8 0%,
+                    #ffe4d9 45%,
+                    #ffc4a8 100%
+                );
+
+            display:flex;
+
+            flex-direction:column;
+
+            align-items:center;
+
+            justify-content:center;
+
+            opacity:0;
+
+            visibility:hidden;
+
+            pointer-events:none;
+
+            transition:
+                opacity .8s ease;
+
+            z-index:100;
+
+            overflow:hidden;
+
+        }
+
+
+        .loading-screen.show{
+
+            opacity:1;
+
+            visibility:visible;
+
+            pointer-events:auto;
+
+        }
+
+
+        /* =====================================================
+           DREAMY LIGHT
+        ===================================================== */
+
+        .loading-screen::before{
+
+            content:"";
+
+            position:absolute;
+
+            inset:-20%;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(255,255,255,.38),
+                    transparent 38%
+                );
+
+            filter:blur(20px);
+
+            pointer-events:none;
+
+        }
+
+
+        /* =====================================================
+           DECORATIVE SPARKLES
+        ===================================================== */
+
+        .loading-screen::after{
+
+            content:"";
+
+            position:absolute;
+
+            width:100%;
+
+            top:15%;
+
+            text-align:center;
+
+            color:rgba(255,255,255,.78);
+
+            font-size:22px;
+
+            letter-spacing:35px;
+
+            opacity:.65;
+
+            animation:
+                sparkleFloat 5s ease-in-out infinite;
+
+            pointer-events:none;
+
+        }
+
+
+        @keyframes sparkleFloat{
+
+            0%,
+            100%{
+
+                transform:translateY(0);
+
+                opacity:.45;
+
+            }
+
+            50%{
+
+                transform:translateY(-12px);
+
+                opacity:.9;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           HEART CANVAS
+        ===================================================== */
+
+        #heartCanvas{
+
+            width:min(700px,90vw);
+
+            height:min(700px,90vw);
+
+            display:block;
+
+            background:transparent;
+
+            position:relative;
+
+            z-index:2;
+
+            filter:
+
+                drop-shadow(
+                    0 15px 35px
+                    rgba(214,85,132,.15)
+                );
+
+        }
+
+
+        /* =====================================================
+           LOADING INFO
+        ===================================================== */
+
+        .loading-info{
+
+            position:absolute;
+
+            bottom:65px;
+
+            width:min(360px,75vw);
+
+            text-align:center;
+
+            color:#fff;
+
+            z-index:5;
+
+        }
+
+
+        .loading-title{
+
+            font-family:"Caveat",cursive;
+
+            font-size:24px;
+
+            letter-spacing:3px;
+
+            margin-bottom:15px;
+
+            color:#c95778;
+
+            text-shadow:
+
+                0 2px 12px
+                rgba(255,255,255,.7);
+
+            opacity:.9;
+
+        }
+
+
+        .loading-track{
+
+            width:100%;
+
+            height:2px;
+
+            background:
+
+                rgba(255,255,255,.45);
+
+            overflow:hidden;
+
+            border-radius:999px;
+
+            box-shadow:
+
+                0 0 8px
+                rgba(255,255,255,.25);
+
+        }
+
+
+        .loading-bar{
+
+            width:0%;
+
+            height:100%;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #d95f7b,
+                    #f28aaa,
+                    #ffd0bd,
+                    #ffffff
+                );
+
+            box-shadow:
+
+                0 0 12px
+                rgba(217,95,123,.65);
+
+            transition:
+
+                width .15s linear;
+
+            border-radius:999px;
+
+        }
+
+
+        .loading-percent{
+
+            margin-top:10px;
+
+            font-family:"DM Sans",sans-serif;
+
+            font-size:9px;
+
+            letter-spacing:3px;
+
+            color:#b95b76;
+
+            opacity:.7;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width:600px){
+
+            h1{
+
+                font-size:48px;
+
+            }
+
+
+            .password-input{
+
+                max-width:290px;
+
+            }
+
+
+            .loading-info{
+
+                bottom:40px;
+
+            }
+
+
+            #heartCanvas{
+
+                width:100vw;
+
+                height:100vw;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           PREMIUM PASSWORD SCREEN
+        ===================================================== */
+
+        :root{
+
+            --lux-bg:#180f13;
+            --lux-pink:#e985a0;
+            --lux-peach:#f5b38d;
+            --lux-cream:#fff5ee;
+
+        }
+
+
+        body{
+
+            background:
+
+                radial-gradient(
+                    circle at 18% 18%,
+                    rgba(233,133,160,.18),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 82% 75%,
+                    rgba(255, 109, 25, 0.16),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #160e12,
+                    #24131a 52%,
+                    #120c10
+                ) !important;
+
+            color:var(--lux-cream) !important;
+
+        }
+
+
+        body::after{
+
+            background:
+
+                radial-gradient(
+                    ellipse at center,
+                    rgba(233, 0, 0, 0.07),
+                    transparent 55%
+                ) !important;
+
+        }
+
+
+        .lock-screen{
+
+            width:min(820px,90vw) !important;
+
+            padding:60px 40px !important;
+
+            border:
+                1px solid
+                rgba(255,255,255,.13) !important;
+
+            border-radius:34px !important;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.07),
+                    rgba(255,255,255,.025)
+                ) !important;
+
+            box-shadow:
+
+                0 35px 100px
+                rgba(0,0,0,.35),
+
+                inset 0 1px
+                rgba(255,255,255,.08) !important;
+
+            backdrop-filter:
+                blur(18px) !important;
+
+            position:relative;
+
+            overflow:hidden;
+
+        }
+
+
+        .lock-screen:before{
+
+            content:'02 YEARS';
+
+            position:absolute;
+
+            top:24px;
+
+            right:28px;
+
+            font:
+                500 9px
+                'DM Sans',sans-serif;
+
+            letter-spacing:.28em;
+
+            color:
+                rgba(255,255,255,.45);
+
+        }
+
+
+        .lock-screen h1{
+
+            font-family:
+                'Playfair Display',
+                serif !important;
+
+            font-size:
+                clamp(
+                    3.5rem,
+                    9vw,
+                    7.5rem
+                ) !important;
+
+            line-height:.85 !important;
+
+            letter-spacing:-.055em !important;
+
+            color:#fff7f0 !important;
+
+            text-shadow:
+
+                0 10px 45px
+                rgba(233,133,160,.18) !important;
+
+        }
+
+
+        .lock-screen .tiny{
+
+            letter-spacing:.32em !important;
+
+            color:
+                var(--lux-peach) !important;
+
+            text-transform:
+                uppercase !important;
+
+        }
+
+
+        .lock-screen .subtitle{
+
+            color:
+                rgba(255,245,238,.58) !important;
+
+            letter-spacing:.12em !important;
+
+        }
+
+
+        .password-box{
+
+            width:
+                min(430px,100%) !important;
+
+            margin:
+                45px auto 0 !important;
+
+            border-radius:
+                999px !important;
+
+            padding:
+                5px !important;
+
+        }
+
+
+        .password-input{
+
+            color:white !important;
+
+            padding-left:20px !important;
+
+            padding-right:20px !important;
+
+            margin:0 auto !important;
+
+        }
+
+
+        .password-input::placeholder{
+
+            color:
+                rgba(255,255,255,.35) !important;
+
+        }
+
+
+        .enter-button{
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #d96988,
+                    #eaa27e
+                ) !important;
+
+            color:white !important;
+
+            border-radius:
+                999px !important;
+
+            padding:
+                14px 25px !important;
+
+            box-shadow:
+
+                0 8px 25px
+                rgba(163, 6, 51, 0.22) !important;
+
+        }
+
+
+        /* =====================================================
+           MOBILE PASSWORD SCREEN
+        ===================================================== */
+
+        @media(max-width:600px){
+
+            .lock-screen{
+
+                width:92vw !important;
+
+                padding:
+                    45px 20px !important;
+
+            }
+
+
+            .lock-screen h1{
+
+                font-size:
+                    clamp(
+                        3rem,
+                        16vw,
+                        5rem
+                    ) !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         DECORATIVE LIGHTS
+    ===================================================== -->
+
+    <div class="light one"></div>
+
+    <div class="light two"></div>
+
+    <div class="light three"></div>
+
+    <div class="light four"></div>
+
+
+    <!-- =====================================================
+         PASSWORD
+    ===================================================== -->
+
+    <main
+        class="lock-screen"
+        id="lockScreen"
+    >
+
+        <div class="tiny">
+
+            surprise waits you.
+
+        </div>
+
+
+        <h1>
+
+            beautiful memories
+
+        </h1>
+
+
+        <div class="subtitle">
+
+            enter your favorite sentence
+
+        </div>
+
+
+        <div class="password-box">
+
+            <input
+                type="password"
+                id="passwordInput"
+                class="password-input"
+                placeholder="enter it here..."
+                autocomplete="off"
+            >
+
+
+            <button
+                class="enter-button"
+                id="enterButton"
+                type="button"
+            >
+
+                enter
+
+            </button>
+
+
+            <div
+                class="error"
+                id="error"
+            >
+
+                nope. try again.
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         DREAMY HEART LOADING SCREEN
+    ===================================================== -->
+
+    <section
+        class="loading-screen"
+        id="loadingScreen"
+    >
+
+        <canvas
+            id="heartCanvas"
+            width="700"
+            height="700"
+        ></canvas>
+
+
+        <div class="loading-info">
+
+            <div class="loading-title">
+
+                opening...
+
+            </div>
+
+
+            <div class="loading-track">
+
+                <div
+                    class="loading-bar"
+                    id="loadingBar"
+                ></div>
+
+            </div>
+
+
+            <div
+                class="loading-percent"
+                id="loadingPercent"
+            >
+
+                0%
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+
+        /* =====================================================
+           PASSWORD
+        ===================================================== */
+
+
+        const CORRECT_PASSWORD =
+            "meme is love";
+
+
+        const lockScreen =
+            document.getElementById(
+                "lockScreen"
+            );
+
+
+        const loadingScreen =
+            document.getElementById(
+                "loadingScreen"
+            );
+
+
+        const passwordInput =
+            document.getElementById(
+                "passwordInput"
+            );
+
+
+        const enterButton =
+            document.getElementById(
+                "enterButton"
+            );
+
+
+        const error =
+            document.getElementById(
+                "error"
+            );
+
+
+        const loadingBar =
+            document.getElementById(
+                "loadingBar"
+            );
+
+
+        const loadingPercent =
+            document.getElementById(
+                "loadingPercent"
+            );
+
+
+        /* =====================================================
+           CHECK PASSWORD
+        ===================================================== */
+
+        function checkPassword(){
+
+            const password =
+                passwordInput.value.trim();
+
+
+            if(
+                password ===
+                CORRECT_PASSWORD
+            ){
+
+                error.classList.remove(
+                    "show"
+                );
+
+
+                sessionStorage.setItem(
+                    "authenticated",
+                    "true"
+                );
+
+
+                lockScreen.classList.add(
+                    "hide"
+                );
+
+
+                setTimeout(() => {
+
+                    loadingScreen.classList.add(
+                        "show"
+                    );
+
+
+                    startHeart();
+
+                },650);
+
+            }
+
+
+            else{
+
+                error.classList.add(
+                    "show"
+                );
+
+
+                passwordInput.value =
+                    "";
+
+
+                passwordInput.focus();
+
+            }
+
+        }
+
+
+        /* =====================================================
+           BUTTON
+        ===================================================== */
+
+        enterButton.addEventListener(
+            "click",
+            checkPassword
+        );
+
+
+        /* =====================================================
+           ENTER KEY
+        ===================================================== */
+
+        passwordInput.addEventListener(
+            "keydown",
+            function(event){
+
+                if(
+                    event.key === "Enter"
+                ){
+
+                    checkPassword();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           HEART CANVAS
+        ===================================================== */
+
+        const canvas =
+            document.getElementById(
+                "heartCanvas"
+            );
+
+
+        const ctx =
+            canvas.getContext(
+                "2d"
+            );
+
+
+        const centerX =
+            canvas.width / 2;
+
+
+        const centerY =
+            canvas.height / 2 + 15;
+
+
+        /* =====================================================
+           RANDOM
+        ===================================================== */
+
+        function random(
+            min,
+            max
+        ){
+
+            return Math.random() *
+                (max - min) +
+                min;
+
+        }
+
+
+        /* =====================================================
+           HEART EQUATION
+        ===================================================== */
+
+        function getHeartPoint(
+            a,
+            scale
+        ){
+
+            const x =
+
+                16 *
+                Math.pow(
+                    Math.sin(a),
+                    3
+                ) *
+                scale;
+
+
+            const y =
+
+                (
+                    13 *
+                    Math.cos(a)
+
+                    -
+
+                    5 *
+                    Math.cos(2 * a)
+
+                    -
+
+                    2 *
+                    Math.cos(3 * a)
+
+                    -
+
+                    Math.cos(4 * a)
+
+                ) *
+                scale;
+
+
+            return {
+
+                x:
+                    centerX + x,
+
+                y:
+                    centerY - y,
+
+                rawX:
+                    x,
+
+                rawY:
+                    y
+
+            };
+
+        }
+
+
+        /* =====================================================
+           PARTICLES
+        ===================================================== */
+
+        let particles = [];
+
+
+        function createParticles(){
+
+            particles = [];
+
+
+            for(
+                let i = 0;
+                i < 13000;
+                i++
+            ){
+
+                const a =
+                    random(
+                        0,
+                        Math.PI * 2
+                    );
+
+
+                const scale =
+                    random(
+                        .45,
+                        15.2
+                    );
+
+
+                const pt =
+                    getHeartPoint(
+                        a,
+                        scale
+                    );
+
+
+                particles.push({
+
+                    x:pt.x,
+
+                    y:pt.y,
+
+                    baseX:pt.x,
+
+                    baseY:pt.y,
+
+                    angle:a,
+
+                    size:
+                        random(
+                            .35,
+                            1.35
+                        ),
+
+                    length:
+                        random(
+                            3,
+                            13
+                        ),
+
+                    speed:
+                        random(
+                            .003,
+                            .012
+                        ),
+
+                    phase:
+                        random(
+                            0,
+                            Math.PI * 2
+                        )
+
+                });
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SPARKLES
+        ===================================================== */
+
+        let sparkles = [];
+
+
+        for(
+            let i = 0;
+            i < 45;
+            i++
+        ){
+
+            sparkles.push({
+
+                x:
+                    random(
+                        80,
+                        620
+                    ),
+
+                y:
+                    random(
+                        70,
+                        630
+                    ),
+
+                size:
+                    random(
+                        1,
+                        3
+                    ),
+
+                phase:
+                    random(
+                        0,
+                        Math.PI * 2
+                    ),
+
+                speed:
+                    random(
+                        .01,
+                        .035
+                    )
+
+            });
+
+        }
+
+
+        /* =====================================================
+           ORBIT
+        ===================================================== */
+
+        let orbitAngle = 0;
+
+
+        /* =====================================================
+           DRAW HEART
+        ===================================================== */
+
+        function draw(){
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+
+            /* =============================================
+               SOFT HEART GLOW
+            ============================================= */
+
+            const glow =
+                ctx.createRadialGradient(
+                    centerX,
+                    centerY,
+                    20,
+                    centerX,
+                    centerY,
+                    300
+                );
+
+
+            glow.addColorStop(
+                0,
+                "rgba(255,130,180,.18)"
+            );
+
+
+            glow.addColorStop(
+                .45,
+                "rgba(255,170,190,.08)"
+            );
+
+
+            glow.addColorStop(
+                1,
+                "rgba(255,255,255,0)"
+            );
+
+
+            ctx.fillStyle =
+                glow;
+
+
+            ctx.beginPath();
+
+
+            ctx.arc(
+                centerX,
+                centerY,
+                310,
+                0,
+                Math.PI * 2
+            );
+
+
+            ctx.fill();
+
+
+            /* =============================================
+               ORBIT RINGS
+            ============================================= */
+
+            orbitAngle += .0025;
+
+
+            ctx.save();
+
+
+            ctx.translate(
+                centerX,
+                centerY
+            );
+
+
+            ctx.rotate(
+                orbitAngle
+            );
+
+
+            ctx.strokeStyle =
+                "rgba(255,255,255,.28)";
+
+
+            ctx.lineWidth = 1;
+
+
+            ctx.beginPath();
+
+
+            ctx.ellipse(
+                0,
+                0,
+                285,
+                95,
+                0,
+                0,
+                Math.PI * 2
+            );
+
+
+            ctx.stroke();
+
+
+            ctx.rotate(
+                Math.PI / 2.7
+            );
+
+
+            ctx.strokeStyle =
+                "rgba(255,255,255,.18)";
+
+
+            ctx.beginPath();
+
+
+            ctx.ellipse(
+                0,
+                0,
+                265,
+                75,
+                0,
+                0,
+                Math.PI * 2
+            );
+
+
+            ctx.stroke();
+
+
+            ctx.restore();
+
+
+            /* =============================================
+               HEART PARTICLES
+            ============================================= */
+
+            for(
+                let p of particles
+            ){
+
+                p.phase +=
+                    p.speed;
+
+
+                const movement =
+                    Math.sin(
+                        p.phase
+                    ) * .8;
+
+
+                const x =
+                    p.baseX +
+                    Math.cos(
+                        p.angle
+                    ) *
+                    movement;
+
+
+                const y =
+                    p.baseY +
+                    Math.sin(
+                        p.angle
+                    ) *
+                    movement;
+
+
+                /* =====================================
+                   PINK / PEACH / WHITE
+                ===================================== */
+
+                let color;
+
+
+                const randomColor =
+                    Math.random();
+
+
+                if(
+                    randomColor < .52
+                ){
+
+                    color =
+                        "rgba(244,112,168,.78)";
+
+                }
+
+                else if(
+                    randomColor < .78
+                ){
+
+                    color =
+                        "rgba(255,155,193,.85)";
+
+                }
+
+                else if(
+                    randomColor < .92
+                ){
+
+                    color =
+                        "rgba(255,205,192,.90)";
+
+                }
+
+                else{
+
+                    color =
+                        "rgba(255,255,255,.95)";
+
+                }
+
+
+                ctx.strokeStyle =
+                    color;
+
+
+                ctx.lineWidth =
+                    p.size;
+
+
+                const angle =
+                    Math.atan2(
+                        y - centerY,
+                        x - centerX
+                    );
+
+
+                const length =
+                    p.length *
+                    (
+                        .65 +
+                        Math.sin(
+                            p.phase
+                        ) * .25
+                    );
+
+
+                ctx.beginPath();
+
+
+                ctx.moveTo(
+                    x,
+                    y
+                );
+
+
+                ctx.lineTo(
+
+                    x +
+                    Math.cos(angle) *
+                    length,
+
+                    y +
+                    Math.sin(angle) *
+                    length
+
+                );
+
+
+                ctx.stroke();
+
+            }
+
+
+            /* =============================================
+               OUTER HEART GLOW
+            ============================================= */
+
+            for(
+                let k = 0;
+                k < 900;
+                k++
+            ){
+
+                const a =
+                    random(
+                        0,
+                        Math.PI * 2
+                    );
+
+
+                const pt =
+                    getHeartPoint(
+                        a,
+                        random(
+                            15.4,
+                            16.8
+                        )
+                    );
+
+
+                ctx.strokeStyle =
+
+                    Math.random() > .5
+
+                    ?
+
+                    "rgba(255,150,190,.65)"
+
+                    :
+
+                    "rgba(255,225,215,.75)";
+
+
+                ctx.lineWidth =
+                    random(
+                        .4,
+                        1
+                    );
+
+
+                const direction =
+                    Math.atan2(
+                        pt.rawY,
+                        pt.rawX
+                    );
+
+
+                const length =
+                    random(
+                        5,
+                        19
+                    );
+
+
+                ctx.beginPath();
+
+
+                ctx.moveTo(
+                    pt.x,
+                    pt.y
+                );
+
+
+                ctx.lineTo(
+
+                    pt.x +
+                    Math.cos(direction) *
+                    length,
+
+                    pt.y +
+                    Math.sin(direction) *
+                    length
+
+                );
+
+
+                ctx.stroke();
+
+            }
+
+
+            /* =============================================
+               FLOATING SPARKLES
+            ============================================= */
+
+            for(
+                let s of sparkles
+            ){
+
+                s.phase +=
+                    s.speed;
+
+
+                const opacity =
+
+                    .25 +
+
+                    (
+                        Math.sin(
+                            s.phase
+                        ) + 1
+                    ) * .35;
+
+
+                ctx.fillStyle =
+                    `rgba(255,255,255,${opacity})`;
+
+
+                ctx.beginPath();
+
+
+                ctx.arc(
+                    s.x,
+                    s.y,
+                    s.size,
+                    0,
+                    Math.PI * 2
+                );
+
+
+                ctx.fill();
+
+
+                if(
+                    s.size > 2
+                ){
+
+                    ctx.strokeStyle =
+                        `rgba(255,255,255,${opacity * .7})`;
+
+
+                    ctx.lineWidth =
+                        .7;
+
+
+                    ctx.beginPath();
+
+
+                    ctx.moveTo(
+                        s.x - 5,
+                        s.y
+                    );
+
+
+                    ctx.lineTo(
+                        s.x + 5,
+                        s.y
+                    );
+
+
+                    ctx.moveTo(
+                        s.x,
+                        s.y - 5
+                    );
+
+
+                    ctx.lineTo(
+                        s.x,
+                        s.y + 5
+                    );
+
+
+                    ctx.stroke();
+
+                }
+
+            }
+
+
+            requestAnimationFrame(
+                draw
+            );
+
+        }
+
+
+        /* =====================================================
+           START HEART
+        ===================================================== */
+
+        function startHeart(){
+
+            loadingBar.style.width =
+                "0%";
+
+
+            loadingPercent.textContent =
+                "0%";
+
+
+            let progress = 0;
+
+
+            const progressTimer =
+                setInterval(() => {
+
+                    progress += 1;
+
+
+                    loadingBar.style.width =
+                        progress + "%";
+
+
+                    loadingPercent.textContent =
+                        progress + "%";
+
+
+                    if(
+                        progress >= 100
+                    ){
+
+                        clearInterval(
+                            progressTimer
+                        );
+
+
+                        setTimeout(() => {
+
+                            window.location.href =
+                                "index.html";
+
+                        },500);
+
+                    }
+
+                },32);
+
+        }
+
+
+        /* =====================================================
+           CREATE PARTICLES
+        ===================================================== */
+
+        createParticles();
+
+
+        /* =====================================================
+           START ANIMATION
+        ===================================================== */
+
+        draw();
+
+
+    </script>
+
+
+</body>
+
+</html>
